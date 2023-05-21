@@ -1,34 +1,28 @@
 <?php
 
-class BD {
+class DB {
     private $server = "localhost";
-    private $username;
-    private $password;
-    private $dataBaseName;
-    protected $connection;
+    private $username = 'api';
+    private $password = '';
+    private $dataBaseName = "bd_trabalho_livraria_3ads";
+    //private $dataBaseName = "teste_api";
+    protected $conn;
 
-    public function __construct($username, $password, $dataBaseName) {
+    public function __construct() {
         try {
-            // recebendo dados para conexão
-            $this->username = $username;
-            $this->password = $password;
-            $this->dataBaseName = $dataBaseName;
-
-            // configurando conexão com PDO
-            $this->connection = new PDO
-            ("mysql:
-                host=$this->server;
-                dbname=$this->dataBaseName;
-                $this->username, $this->password
-            ");
-            $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conn = new PDO(
+                "mysql:host=$this->server;dbname=$this->dataBaseName",
+                $this->username,
+                $this->password
+            );
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $error) {
             echo "Erro na conexão: ".$error->getMessage();
         }
     }
 
     public function disconnect() {
-        $this->connection = NULL;
+        $this->conn = NULL;
     }
 }
 
