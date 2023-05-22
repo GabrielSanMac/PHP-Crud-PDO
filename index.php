@@ -12,6 +12,7 @@
     <a href="http://localhost/mvc/index.php?route=pj&&action=list">PESSOA JURIDICA</a>
     <a href="http://localhost/mvc/index.php?route=pf&&action=list">PESSOA FISICA</a>
     <a href="http://localhost/mvc/index.php?route=autor&&action=list">AUTOR</a>
+    <a href="http://localhost/mvc/index.php?route=genero&&action=list">GENERO</a>
     <?php 
         require_once 'controller/ClientController.php';
         require_once 'view/ClientView.php';
@@ -23,6 +24,7 @@
             'pj' => 'PJController',
             'pf' => 'PFController',
             'autor' => 'AutorController',
+            'genero' => 'GeneroController',
         ];
 
         $route_model = [
@@ -30,6 +32,7 @@
             'pj' => 'PJModel',
             'pf' => 'PFModel',
             'autor' => 'AutorModel',
+            'genero' => 'GeneroModel',
         ];
 
         $route_view = [
@@ -37,6 +40,7 @@
             'client' => 'ClientView',
             'pj' => 'PJView',
             'pf' => 'PFView',
+            'genero' => 'GeneroView',
             'autor' => 'AutorView',
         ];
 

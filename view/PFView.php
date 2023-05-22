@@ -20,6 +20,7 @@ class PFView {
             echo "<td>".$PFs[$i]['cliente_id']."</td>";
             echo "</tr>";
         }
+        echo "</table>";
         echo "<a href='http://localhost/mvc/index.php?route=pf&&action=insert'>INSERT</a>";
     }
 

@@ -29,7 +29,7 @@ class AutorModel extends DB{
 
     public function updateAutor($id,$nome) {
         try {
-            $statement = $this->conn->prepare("UPDATE autor SET nome = :nome WHERE id = :id");
+            $statement = $this->conn->prepare("UPDATE autor SET nome_autor = :nome WHERE id = :id");
             $statement->bindParam(":nome",$nome);
             $statement->bindParam(":id",$id);
             $statement->execute();

@@ -19,6 +19,7 @@ class PJView {
             echo "<td>".$PJs[$i]['cliente_id']."</td>";
             echo "</tr>";
         }
+        echo "</table>";
         echo "<a href='http://localhost/mvc/index.php?route=pj&&action=insert'>INSERT</a>";
     }
 

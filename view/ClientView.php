@@ -21,6 +21,7 @@ class ClientView {
         }
         echo "</table>";
         echo "<a href='http://localhost/mvc/index.php?route=client&&action=insert'>INSERT NEW CLIENT</a>";
+
     }
 
     public function showInsertForm(){

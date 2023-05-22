@@ -2,12 +2,11 @@
 
 class AutorView {
     public function showListAutores($autores) {
-        echo '<h1>CLIENT LIST</h1><br>';
+        echo '<h1>AUTHOR LIST</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>ID ADDRESS</th>
                     <th>ACTION</th>
                 </tr>';
         for($i = 0; $i<count($autores);$i++){
@@ -34,6 +33,7 @@ class AutorView {
     public function showUpdateForm($autor) {
         echo "<h1>EDIT CLIENT</h1>";
         echo "<form action='index.php?route=autor&&action=update' method='POST'>
+                <input type=text name='id' value='".$autor['id']."'>
                 <input type=text name='nome' value='".$autor['nome_autor']."'>
                 <input type='submit' value='update'>
               </form>";
