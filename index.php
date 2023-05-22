@@ -11,6 +11,7 @@
     <a href="http://localhost/mvc/index.php?route=client&&action=list">CLIENT</a>
     <a href="http://localhost/mvc/index.php?route=pj&&action=list">PESSOA JURIDICA</a>
     <a href="http://localhost/mvc/index.php?route=pf&&action=list">PESSOA FISICA</a>
+    <a href="http://localhost/mvc/index.php?route=autor&&action=list">AUTOR</a>
     <?php 
         require_once 'controller/ClientController.php';
         require_once 'view/ClientView.php';
@@ -21,12 +22,14 @@
             'client' => 'ClientController',
             'pj' => 'PJController',
             'pf' => 'PFController',
+            'autor' => 'AutorController',
         ];
 
         $route_model = [
             'client' => 'ClientModel',
             'pj' => 'PJModel',
             'pf' => 'PFModel',
+            'autor' => 'AutorModel',
         ];
 
         $route_view = [
@@ -34,6 +37,7 @@
             'client' => 'ClientView',
             'pj' => 'PJView',
             'pf' => 'PFView',
+            'autor' => 'AutorView',
         ];
 
         if(isset($route_controller[$route]) && isset($route_model[$route]) && isset($route_view[$route])){

@@ -1,7 +1,5 @@
 <?php 
 
-require_once 'model/ClientModel.php';
-
 class ClientController{
     private $model;
 
