@@ -19,18 +19,18 @@ class PJView {
             echo "<td>".$PJs[$i]['cliente_id']."</td>";
             echo "</tr>";
         }
-        echo "<a href='http://localhost/mvc/index.php?route=pj&&action=pinsert'>INSERT</a>";
+        echo "<a href='http://localhost/mvc/index.php?route=pj&&action=insert'>INSERT</a>";
     }
 
     public function showPJproInsertForm(){
         echo "<h1>INSERT PJ</h1>";
-        echo "<form action='http://localhost/mvc/index.php?route=pj&&action=pinsert' method='POST'>
-                NAME: <input type=text name='name'><br>
-                ENDEREÇO : <input type=text name='addressId'><br>
-                RAZÃO SOCIAL: <input type=text name='razaosocial'><br>
+        echo "<form action='http://localhost/mvc/index.php?route=pj&&action=insert' method='POST'>
+                NAME: <input type=text name='nome'><br>
+                ENDEREÇO : <input type=text name='endereco_id'><br>
+                RAZÃO SOCIAL: <input type=text name='razao_social'><br>
                 CNPJ : <input type=text name='cnpj'><br>
                 <input type=submit value='INSERT'>
-               </form>";
+            </form>";
     }
 }
 

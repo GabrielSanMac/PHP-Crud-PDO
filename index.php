@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD :: PDO PHP</title>
+    <title>Minha Livraria</title>
 </head>
 <body>
     <a href="http://localhost/mvc/index.php?route=home&&action=index">HOME</a>
     <a href="http://localhost/mvc/index.php?route=client&&action=list">CLIENT</a>
     <a href="http://localhost/mvc/index.php?route=pj&&action=list">PESSOA JURIDICA</a>
+    <a href="http://localhost/mvc/index.php?route=pf&&action=list">PESSOA FISICA</a>
     <?php 
         require_once 'controller/ClientController.php';
         require_once 'view/ClientView.php';
@@ -19,17 +20,20 @@
             'home' => 'HomeController',
             'client' => 'ClientController',
             'pj' => 'PJController',
+            'pf' => 'PFController',
         ];
 
         $route_model = [
             'client' => 'ClientModel',
             'pj' => 'PJModel',
+            'pf' => 'PFModel',
         ];
 
         $route_view = [
             'home' => 'HomeView',
             'client' => 'ClientView',
             'pj' => 'PJView',
+            'pf' => 'PFView',
         ];
 
         if(isset($route_controller[$route]) && isset($route_model[$route]) && isset($route_view[$route])){

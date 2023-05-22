@@ -1,6 +1,5 @@
 <?php 
 
-require_once 'model/PjModel.php';
 
 class PJController{
     private $model;
@@ -16,13 +15,13 @@ class PJController{
                 $this->listPJs($PJs);
                 $this->model->disconnect();
             break;
-            case 'pinsert':
+            case 'insert':
                 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-                    $name = $_POST['name'];
-                    $addressid = $_POST['addressId'];
-                    $razaosocial = $_POST['razaosocial'];
+                    $nome = $_POST['nome'];
+                    $endereco_id = $_POST['endereco_id'];
+                    $razao_social = $_POST['razao_social'];
                     $cnpj = $_POST['cnpj'];
-                    $this->model->ProInsertPJ($name,$addressid,$razaosocial,$cnpj);
+                    $this->model->insertPJ($nome,$endereco_id,$razao_social,$cnpj);
                     $this->listPJs($this->model->getAllPJ());
                 } else {
                     $this->showPJproInsertForm();

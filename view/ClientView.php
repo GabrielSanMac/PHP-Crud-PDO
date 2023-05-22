@@ -25,10 +25,9 @@ class ClientView {
 
     public function showInsertForm(){
         echo "<h1>INSERT FORM CLIENT</h1>";
-        echo 
-        "<form method='POST' action='index.php?route=client&&action=insert'>
-            <input type='text' name='name' required><br>
-            <input type='text' name='addressId' required><br>
+        echo "<form method='POST' action='index.php?route=client&&action=insert'>
+            NOME : <input type='text' name='name' required><br>
+            ENDERECO (ID) <input type='text' name='addressId' required><br>
             <input type='submit' value='insert'>
             <a href='http://localhost/mvc/index.php?route=client&&action=list'>BACK</a>
          </form>";
@@ -36,7 +35,6 @@ class ClientView {
 
     public function showUpdateForm($client){
         echo "<h1>EDIT CLIENT</h1>";
-        echo $client['nome'];
         echo "<form action='http://localhost/mvc/index.php?route=client&&action=update' method='POST'>
                 <input type=text name='id' value='".$client['id']."'>
                 <input type=text name='nome' value='".$client['nome']."'>
