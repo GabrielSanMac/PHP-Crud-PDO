@@ -7,18 +7,18 @@ class GeneroView {
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>ACTION</th>
+                    <th colspan=2>ACTION</th>
                 </tr>';
         for($i = 0; $i<count($generos);$i++){
             echo "<tr>";
             echo "<td>".$generos[$i]['id']."</td>";
             echo "<td>".$generos[$i]['nome_genero']."</td>";
-            echo "<td><a href='index.php?route=genero&&id=".$generos[$i]['id']."&&action=edit'>EDIT GENDER</a></td>";
-            echo "<td><a href='index.php?route=genero&&id=".$generos[$i]['id']."&&action=delete'>DELETE GENDER</a></td>";
+            echo "<td><a class=btnEdit href='index.php?route=genero&&id=".$generos[$i]['id']."&&action=edit'>EDIT</a></td>";
+            echo "<td><a class=btnRemove href='index.php?route=genero&&id=".$generos[$i]['id']."&&action=delete'>DELETE</a></td>";
             echo "</tr>";
         }
         echo "</table>";
-        echo "<a href='index.php?route=genero&&action=insert'>INSERT NEW GENDER</a>";
+        echo "<a class=btnAdd href='index.php?route=genero&&action=insert'>NEW</a>";
     }
 
     public function showInsertForm() {

@@ -1,6 +1,6 @@
 <?php 
 
-class GeneroController {
+class GerenteController {
     private $model;
 
     public function __construct($model){
@@ -10,24 +10,24 @@ class GeneroController {
     public function reqAction($action){
         switch($action) {
             case 'list':
-                $this->listGeneros($this->model->getAllGeneros());
+                $this->listGerentes($this->model->getAllGerentes());
                 $this->model->disconnect();
             break;
             case 'insert':
                 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['nome'])){
                     $nome = $_POST['nome'];
-                    $this->model->insertGenero($nome);
-                    $this->listGeneros($this->model->getAllGeneros());
+                    $this->model->insertGerente($nome);
+                    $this->listGerentes($this->model->getAllGerentes());
                 } else {
                     $this->showInsertForm();
                 }
                 break;
             case 'edit':
                 if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id'])){
-                    $generoId = $_GET['id'];
-                    $genero = $this->model->getGeneroById($generoId);
-                    if($genero){
-                        $this->showUpdateForm($genero);
+                    $gerenteId = $_GET['id'];
+                    $gerente = $this->model->getGerenteById($gerenteId);
+                    if($gerente){
+                        $this->showUpdateForm($gerente);
                     } else {
                         echo "GENDER NOT FOUND 404";
                     }
@@ -37,33 +37,33 @@ class GeneroController {
                 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['nome'])){
                     $id = $_POST['id'];
                     $nome = $_POST['nome'];
-                    $this->model->updateGenero($id,$nome);
-                    $this->listGeneros($this->model->getAllGeneros());
+                    $this->model->updateGerente($id,$nome);
+                    $this->listGerentes($this->model->getAllGerentes());
                 }
             break;
             case 'delete':
                 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])){
                     $id = $_GET['id'];
-                    $this->model->deleteGenero($id);
-                    $this->listGeneros($this->model->getAllGeneros());
+                    $this->model->deleteGerente($id);
+                    $this->listGerentes($this->model->getAllGerentes());
                 }
             break;
         }
     }
 
-    public function listGeneros($generos) {
-        $view = new GeneroView();
-        $view->showListGeneros($generos);
+    public function listGerentes($gerentes) {
+        $view = new GerenteView();
+        $view->showListGerentes($gerentes);
     }
 
     public function showInsertForm() {
-        $view = new GeneroView();
+        $view = new GerenteView();
         $view->showInsertForm();
     }
 
-    public function showUpdateForm($genero) {
-        $view = new GeneroView();
-        $view->showUpdateForm($genero);
+    public function showUpdateForm($gerente) {
+        $view = new GerenteView();
+        $view->showUpdateForm($gerente);
     }
 }
 

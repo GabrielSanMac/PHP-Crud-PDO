@@ -9,7 +9,6 @@ class PJView {
                     <th>NAME</th>
                     <th>CNPJ</th>
                     <th>CLIENT ID</th>
-                    <th>ACTIONS</th>
                 </tr>';
         for($i = 0; $i<count($PJs);$i++){
             echo "<tr>";
@@ -20,7 +19,7 @@ class PJView {
             echo "</tr>";
         }
         echo "</table>";
-        echo "<a href='http://localhost/mvc/index.php?route=pj&&action=insert'>INSERT</a>";
+        echo "<a class=btnAdd href='http://localhost/mvc/index.php?route=pj&&action=insert'>NEW</a>";
     }
 
     public function showPJproInsertForm(){

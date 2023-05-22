@@ -7,18 +7,18 @@ class AutorView {
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>ACTION</th>
+                    <th colspan=2>ACTION</th>
                 </tr>';
         for($i = 0; $i<count($autores);$i++){
             echo "<tr>";
             echo "<td>".$autores[$i]['id']."</td>";
             echo "<td>".$autores[$i]['nome_autor']."</td>";
-            echo "<td><a href='index.php?route=autor&&id=".$autores[$i]['id']."&&action=edit'>EDIT AUTHOR</a></td>";
-            echo "<td><a href='index.php?route=autor&&id=".$autores[$i]['id']."&&action=delete'>DELETE AUTHOR</a></td>";
+            echo "<td><a class=btnEdit href='index.php?route=autor&&id=".$autores[$i]['id']."&&action=edit'>EDIT</a></td>";
+            echo "<td><a class=btnRemove href='index.php?route=autor&&id=".$autores[$i]['id']."&&action=delete'>DELETE</a></td>";
             echo "</tr>";
         }
         echo "</table>";
-        echo "<a href='index.php?route=autor&&action=insert'>INSERT NEW AUTHOR</a>";
+        echo "<a class=btnAdd href='index.php?route=autor&&action=insert'>NEW</a>";
     }
 
     public function showInsertForm() {

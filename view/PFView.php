@@ -21,7 +21,7 @@ class PFView {
             echo "</tr>";
         }
         echo "</table>";
-        echo "<a href='http://localhost/mvc/index.php?route=pf&&action=insert'>INSERT</a>";
+        echo "<a class=btnAdd href='http://localhost/mvc/index.php?route=pf&&action=insert'>NEW</a>";
     }
 
     public function showPFInsertForm() {
