@@ -2,7 +2,7 @@
 
 class AutorView {
     public function showListAutores($autores) {
-        echo '<h1>AUTHOR LIST</h1><br>';
+        echo '<h1>AUTOR</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>

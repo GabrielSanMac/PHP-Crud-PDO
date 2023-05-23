@@ -2,7 +2,7 @@
 
 class PJView {
     public function showPJs($PJs){
-        echo '<h1>PESSOA JURIDICA LIST</h1><br>';
+        echo '<h1>PESSOA JURIDICA</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>

@@ -2,7 +2,7 @@
 
 class GerenteView {
     public function showListGerentes($gerentes) {
-        echo '<h1>GERENTE LIST</h1><br>';
+        echo '<h1>GERENTE</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>

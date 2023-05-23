@@ -2,7 +2,7 @@
 
 class ClientView {
     public function showClients($clients){
-        echo '<h1>CLIENT LIST</h1><br>';
+        echo '<h1>CLIENTE</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>

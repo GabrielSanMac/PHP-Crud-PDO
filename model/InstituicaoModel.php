@@ -47,7 +47,6 @@ class InstituicaoModel extends DB{
             echo "ERROR INSTITUIÇÃO DELETE MODULE ($error)";
         }
     }
-
 }
 
 ?>

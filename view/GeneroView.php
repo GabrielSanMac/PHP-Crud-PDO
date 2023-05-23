@@ -2,7 +2,7 @@
 
 class GeneroView {
     public function showListGeneros($generos) {
-        echo '<h1>GENDER LIST</h1><br>';
+        echo '<h1>GENERO</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>

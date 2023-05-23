@@ -16,6 +16,7 @@
         <a href="http://localhost/mvc/index.php?route=autor&&action=list">AUTOR</a>
         <a href="http://localhost/mvc/index.php?route=genero&&action=list">GENERO</a>
         <a href="http://localhost/mvc/index.php?route=gerente&&action=list">GERENTE</a>
+        <a href="http://localhost/mvc/index.php?route=instituicao&&action=list">INSTITUIÇÃO</a>
     </header>
 
     <div class="container">
@@ -32,6 +33,7 @@
                 'autor' => 'AutorController',
                 'genero' => 'GeneroController',
                 'gerente' => 'GerenteController',
+                'instituicao' => 'InstituicaoController',
             ];
 
             $route_model = [
@@ -41,6 +43,7 @@
                 'autor' => 'AutorModel',
                 'genero' => 'GeneroModel',
                 'gerente' => 'GerenteModel',
+                'instituicao' => 'InstituicaoModel',
             ];
 
             $route_view = [
@@ -51,6 +54,7 @@
                 'genero' => 'GeneroView',
                 'autor' => 'AutorView',
                 'gerente' => 'GerenteView',
+                'instituicao' => 'InstituicaoView',
             ];
 
             if(isset($route_controller[$route]) && isset($route_model[$route]) && isset($route_view[$route])){

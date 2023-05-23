@@ -2,7 +2,7 @@
 
 class PFView {
     public function showPFs($PFs){
-        echo '<h1>PESSOA JURIDICA LIST</h1><br>';
+        echo '<h1>PESSOA FISICA</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>
