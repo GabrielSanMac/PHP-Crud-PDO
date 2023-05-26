@@ -5,38 +5,57 @@
     box-sizing: border-box;
 }
 
+.main {
+    display: flex;
+    justify-content: space-around;
+}
+
 .container {
-    width: 50%;
+    width: 70%;
+    height: 100vh;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
 .container h1 {
+    margin-top: 40px;
     text-align: center;
 }
 
 header {
-    padding: 20px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #0c487e;
+}
+
+header .titulo {
+    padding: 20px;
+    color: aliceblue;
 }
 
 header a {
-    background-color: #0c487e;
-    padding: 10px;
+    padding: 10px 30px;
+    text-align: center;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    border-radius: 10px;
-    margin: 5px;
     font-size: 12px;
+    width: 100%;
+    transition: .3s all;
+}
+
+header a:hover {
+    background-color: #fff;
+    color: #0c487e;
 }
 
 table {
     text-align: center;
     margin: 20px;
+    width: 100%;
 }
 
 table td{
@@ -85,10 +104,13 @@ form {
     display: flex;
     flex-direction: column;
     margin: 20px;
+    width: 50%;
 }
 
-input {
+input, textarea {
     padding: 20px;
+    margin: 10px;
     font-size: 20px;
     border-radius: 20px;
 }
+

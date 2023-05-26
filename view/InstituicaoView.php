@@ -2,7 +2,7 @@
 
 class InstituicaoView {
     public function showListInstituicao($instituicao) {
-        echo '<h1>ISNTITUIÇÃO</h1><br>';
+        echo '<h1>INSTITUIÇÃO</h1><br>';
         echo '<table>
                 <tr>
                     <th>ID</th>
