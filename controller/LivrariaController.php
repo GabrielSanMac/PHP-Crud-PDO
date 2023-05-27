@@ -27,7 +27,7 @@ class LivrariaController {
                     $livrariaId = $_GET['id'];
                     $livraria = $this->model->getLivrariaById($livrariaId);
                     if($livraria){
-                        $this->showUpdateForm($livrariaId);
+                        $this->showUpdateForm($livraria);
                     } else {
                         echo "AUTHOR NOT FOUND 404";
                     }

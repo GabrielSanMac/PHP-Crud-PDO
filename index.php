@@ -23,9 +23,11 @@
             <a href="http://localhost/mvc/index.php?route=instituicao&&action=list">INSTITUIÇÃO</a>
             <a href="http://localhost/mvc/index.php?route=livraria&&action=list">LIVRARIA</a>
             <a href="http://localhost/mvc/index.php?route=livro&&action=list">LIVRO</a>
-            <a href="http://localhost/mvc/index.php?route=log&&action=list">LOG</a>
             <a href="http://localhost/mvc/index.php?route=carterinha&&action=list">CARTERINHA</a>
             <a href="http://localhost/mvc/index.php?route=telefone&&action=list">TELEFONE</a>
+            <a href="http://localhost/mvc/index.php?route=endereco&&action=list">ENDEREÇO</a>
+            <a href="http://localhost/mvc/index.php?route=log&&action=list">LOG</a>
+
         </header>
 
         <div class="container">
@@ -48,6 +50,7 @@
                     'log' => 'LogController',
                     'carterinha' => 'CarterinhaController',
                     'telefone' => 'TelefoneController',
+                    'endereco' => 'EnderecoController',
                 ];
 
                 $route_model = [
@@ -63,6 +66,7 @@
                     'log' => 'LogModel',
                     'carterinha' => 'CarterinhaModel',
                     'telefone' => 'TelefoneModel',
+                    'endereco' => 'EnderecoModel',
                 ];
 
                 $route_view = [
@@ -79,6 +83,7 @@
                     'log' => 'LogView',
                     'carterinha' => 'CarterinhaView',
                     'telefone' => 'TelefoneView',
+                    'endereco' => 'EnderecoView',
 
                 ];
 

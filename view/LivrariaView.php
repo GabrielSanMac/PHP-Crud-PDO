@@ -31,10 +31,10 @@ class LivrariaView {
     }
 
     public function showUpdateForm($livraria) {
-        echo "<h1>EDIT CLIENT</h1>";
+        echo "<h1>EDIT LIVRARIA</h1>";
         echo "<form action='index.php?route=livraria&&action=update' method='POST'>
-                <input type=text name='id' value='".$livraria['id']."'>
-                <input type=text name='nome' value='".$livraria['nome_livraria']."'>
+                <input type=hidden name='id' value='".$livraria['id']."'>
+                <input type=text name='nome value='".$livraria['nome_livraria']."'>
                 <input type='submit' value='update'>
               </form>";
     }
