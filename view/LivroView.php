@@ -48,7 +48,7 @@ class LivroView {
     public function showUpdateForm($livro) {
         echo "<h1>EDIT LIVRO</h1>";
         echo "<form action='index.php?route=livro&&action=update' method='POST'>
-                <input type=number name='id' value='".$livro['id']."'>
+                <input type=hidden name='id' value='".$livro['id']."'>
                 <input type=text name='titulo' value='".$livro['titulo']."'>
                 <textarea name='assunto'>'".$livro['assunto']."'</textarea>
                 <input type=text name='ano_publicacao' value='".$livro['ano_publicacao']."'>
