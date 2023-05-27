@@ -25,6 +25,7 @@
             <a href="http://localhost/mvc/index.php?route=livro&&action=list">LIVRO</a>
             <a href="http://localhost/mvc/index.php?route=log&&action=list">LOG</a>
             <a href="http://localhost/mvc/index.php?route=carterinha&&action=list">CARTERINHA</a>
+            <a href="http://localhost/mvc/index.php?route=telefone&&action=list">TELEFONE</a>
         </header>
 
         <div class="container">
@@ -46,6 +47,7 @@
                     'livro' => 'LivroController',
                     'log' => 'LogController',
                     'carterinha' => 'CarterinhaController',
+                    'telefone' => 'TelefoneController',
                 ];
 
                 $route_model = [
@@ -60,6 +62,7 @@
                     'livro' => 'LivroModel',
                     'log' => 'LogModel',
                     'carterinha' => 'CarterinhaModel',
+                    'telefone' => 'TelefoneModel',
                 ];
 
                 $route_view = [
@@ -75,6 +78,8 @@
                     'livro' => 'LivroView',
                     'log' => 'LogView',
                     'carterinha' => 'CarterinhaView',
+                    'telefone' => 'TelefoneView',
+
                 ];
 
                 if(isset($route_controller[$route]) && isset($route_model[$route]) && isset($route_view[$route])){
