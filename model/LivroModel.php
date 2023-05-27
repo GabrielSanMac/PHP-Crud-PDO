@@ -28,7 +28,7 @@ class LivroModel extends DB{
             $statement->bindParam(":autor_id",$autor_id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERRO LIVRO INSERT MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -44,7 +44,7 @@ class LivroModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR LIVRO UPDATE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -54,7 +54,7 @@ class LivroModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR LIVRO DELETE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 

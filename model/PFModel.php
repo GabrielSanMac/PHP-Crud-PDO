@@ -31,7 +31,7 @@ class PFModel extends DB {
             throw new Exception("ERROR PROCEDURE INSERT PESSOA FISICA MODULE".$error[2]);
             }
         } catch (Exception $error){
-            echo "ERROR INSERT PF MODULE ".$error->getMessage();
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 

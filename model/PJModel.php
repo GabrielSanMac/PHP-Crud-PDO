@@ -17,12 +17,16 @@ class PJModel extends DB {
     }
 
     public function insertPJ($nome, $endereco_id, $razao_social, $cnpj) {
+        try{
         $statement = $this->conn->prepare('CALL p_inserir_cliente_pessoa_juridica(:nome, :endereco_id, :razao_social, :cnpj)');
         $statement->bindParam(":nome",$nome);
         $statement->bindParam(":endereco_id",$endereco_id);
         $statement->bindParam(":razao_social",$razao_social);
         $statement->bindParam(":cnpj",$cnpj);
         $statement->execute();
+        } catch (Exception $error){
+            echo "ERROR MODULE ".$error->getMessage();
+        }
     }
 
     // DELETE E UPDATE DEVEM TER UMA PROCEDURE

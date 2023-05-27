@@ -1,10 +1,14 @@
 <?php 
 
+require_once("./model/AutorModel.php");
+
 class LivroController {
     private $model;
+    private $autor;
 
     public function __construct($model){
         $this->model = $model;
+        $this->autor = new AutorModel();
     }
 
     public function reqAction($action){
@@ -24,7 +28,7 @@ class LivroController {
                     $this->model->insertLivro($titulo,$assunto,$ano_publicado,$preco,$ISBN,$autor_id);
                     $this->listLivro($this->model->getAllLivro());
                 } else {
-                    $this->showInsertForm();
+                    $this->showInsertForm($this->autor->getAllAutores());
                 }
                 break;
             case 'edit':
@@ -32,7 +36,7 @@ class LivroController {
                     $livroId = $_GET['id'];
                     $livro = $this->model->getLivroById($livroId);
                     if($livro){
-                        $this->showUpdateForm($livro);
+                        $this->showUpdateForm($livro,$this->autor->getAllAutores());
                     } else {
                         echo "AUTHOR NOT FOUND 404";
                     }
@@ -66,14 +70,14 @@ class LivroController {
         $view->showListLivro($livros);
     }
 
-    public function showInsertForm() {
+    public function showInsertForm($autor) {
         $view = new LivroView();
-        $view->showInsertForm();
+        $view->showInsertForm($autor);
     }
 
-    public function showUpdateForm($livro) {
+    public function showUpdateForm($livro,$autor) {
         $view = new LivroView();
-        $view->showUpdateForm($livro);
+        $view->showUpdateForm($livro,$autor);
     }
 }
 

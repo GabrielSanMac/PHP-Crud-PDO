@@ -31,7 +31,7 @@ class LivroView {
         echo "<a class=btnAdd href='index.php?route=livro&&action=insert'>NEW</a>";
     }
 
-    public function showInsertForm() {
+    public function showInsertForm($autor) {
         echo "<h1>INSERT FORM AUTHOR</h1>";
         echo "<form method='POST' action='index.php?route=livro&&action=insert'>
             TITULO <input type='text' name='titulo' required><br>

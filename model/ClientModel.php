@@ -25,7 +25,7 @@ class ClientModel extends DB{
             $statement->bindParam(":addressId",$addressId);
             $statement->execute();
         } catch (PDOException $error){
-            echo "ERROR CLIENT INSERT MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
     
@@ -37,7 +37,7 @@ class ClientModel extends DB{
             $statement->bindParam(":id",$id);
             return $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR CLIENT UPDATE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -47,7 +47,7 @@ class ClientModel extends DB{
             $statement->bindParam(":id",$id);
             return $statement->execute();
         } catch (Exception $error) {
-            echo "ERRO CLIENT DELETE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 }

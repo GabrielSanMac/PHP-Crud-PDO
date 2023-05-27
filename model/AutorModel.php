@@ -23,7 +23,7 @@ class AutorModel extends DB{
             $statement->bindParam(":nome",$nome);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERRO AUTHOR INSERT MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -34,7 +34,7 @@ class AutorModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR AUTHOR UPDATE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -44,7 +44,7 @@ class AutorModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR AUTHOR DELETE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 

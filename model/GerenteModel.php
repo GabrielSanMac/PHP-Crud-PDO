@@ -23,7 +23,7 @@ class GerenteModel extends DB{
             $statement->bindParam(":nome",$nome);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERRO GERENTE INSERT MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -34,7 +34,7 @@ class GerenteModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR GERENTE UPDATE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -44,7 +44,7 @@ class GerenteModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR GERENTE DELETE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 

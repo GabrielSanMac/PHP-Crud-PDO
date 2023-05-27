@@ -23,7 +23,7 @@ class InstituicaoModel extends DB{
             $statement->bindParam(":nome",$nome);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERRO INSTITUIÇÃO INSERT MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -34,7 +34,7 @@ class InstituicaoModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR INSTITUIÇÃO UPDATE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 
@@ -44,7 +44,7 @@ class InstituicaoModel extends DB{
             $statement->bindParam(":id",$id);
             $statement->execute();
         } catch (Exception $error) {
-            echo "ERROR INSTITUIÇÃO DELETE MODULE ($error)";
+            echo "ERROR MODULE ".$error->getMessage();
         }
     }
 }
