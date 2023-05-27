@@ -8,19 +8,15 @@ class ClientView {
                     <th>ID</th>
                     <th>NAME</th>
                     <th>ID ADDRESS</th>
-                    <th colspan=2>ACTION</th>
                 </tr>';
         for($i = 0; $i<count($clients);$i++){
             echo "<tr>";
             echo "<td>".$clients[$i]['id']."</td>";
             echo "<td>".$clients[$i]['nome']."</td>";
             echo "<td>".$clients[$i]['endereco_id']."</td>";
-            echo "<td><a class=btnEdit href='http://localhost/mvc/index.php?route=client&&id=".$clients[$i]['id']."&&action=edit'>EDIT</a></td>";
-            echo "<td><a class=btnRemove href='http://localhost/mvc/index.php?route=client&&id=".$clients[$i]['id']."&&action=delete'>DELETE</a></td>";
             echo "</tr>";
         }
         echo "</table>";
-        echo "<a class=btnAdd href='http://localhost/mvc/index.php?route=client&&action=insert'>NEW</a>";
 
     }
 

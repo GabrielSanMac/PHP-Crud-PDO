@@ -19,7 +19,7 @@ class LivroModel extends DB{
 
     public function insertLivro($titulo,$assunto,$ano_publicado,$preco,$ISBN,$autor_id) {
         try {
-            $statement = $this->conn->prepare("INSERT INTO livro VALUES (0,:titulo,:assunto,:ano_publicado,:preco,:ISBN,autor_id)");
+            $statement = $this->conn->prepare("INSERT INTO livro VALUES (0,:titulo,:assunto,:ano_publicado,:preco,:ISBN,:autor_id)");
             $statement->bindParam(":titulo",$titulo);
             $statement->bindParam(":assunto",$assunto);
             $statement->bindParam(":ano_publicado",$ano_publicado);

@@ -1,7 +1,7 @@
 <?php 
 
 class LivroView {
-    public function showListLivro($livros) {
+    public function showListLivro($livros,$autor) {
         echo '<h1>LIVRO</h1><br>';
         echo '<table>
                 <tr>
@@ -11,7 +11,7 @@ class LivroView {
                     <th>DATA PUBLICAÇÃO</th>
                     <th>PREÇO (R$)</th>
                     <th>ISBN</th>
-                    <th>AUTOR ID</th>
+                    <th>AUTOR</th>
                     <th colspan=2>ACTION</th>
                 </tr>';
         for($i = 0; $i<count($livros);$i++){
@@ -22,7 +22,7 @@ class LivroView {
             echo "<td>".$livros[$i]['ano_publicacao']."</td>";
             echo "<td>".$livros[$i]['preco']."</td>";
             echo "<td>".$livros[$i]['ISBN']."</td>";
-            echo "<td>".$livros[$i]['autor_id']."</td>";
+            echo "<td>".$autor->getAutorById($livros[$i]['autor_id'])['nome_autor']."</td>";
             echo "<td><a class=btnEdit href='index.php?route=livro&&id=".$livros[$i]['id']."&&action=edit'>EDIT</a></td>";
             echo "<td><a class=btnRemove href='index.php?route=livro&&id=".$livros[$i]['id']."&&action=delete'>DELETE</a></td>";
             echo "</tr>";
@@ -39,8 +39,11 @@ class LivroView {
             DATA PUBLICADO <input type='text' name='ano_publicado' required><br>
             PREÇO <input type='text' name='preco' required><br>
             ISBN <input type='text' name='ISBN' required><br>
-            AUTOR ID <input type='text' name='autor_id' required><br>
-            <input type='submit' value='insert'>
+            AUTOR ID <select name='autor_id'>";?><?php
+            for($i = 0; $i < count($autor);$i++){
+                echo "<option value=".$autor[$i]['id'].">".$autor[$i]['nome_autor']."<option>";
+            }
+            echo "</select><input type='submit' value='insert'>
             <a href='index.php?route=livro&&action=list'>BACK</a>
          </form>";
     }

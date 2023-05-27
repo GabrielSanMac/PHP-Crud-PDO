@@ -14,7 +14,7 @@ class LivroController {
     public function reqAction($action){
         switch($action) {
             case 'list':
-                $this->listLivro($this->model->getAllLivro());
+                $this->listLivro($this->model->getAllLivro(),$this->autor);
                 $this->model->disconnect();
             break;
             case 'insert':
@@ -26,7 +26,7 @@ class LivroController {
                     $ISBN = $_POST['ISBN'];
                     $autor_id = $_POST['autor_id'];
                     $this->model->insertLivro($titulo,$assunto,$ano_publicado,$preco,$ISBN,$autor_id);
-                    $this->listLivro($this->model->getAllLivro());
+                    $this->listLivro($this->model->getAllLivro(),$this->autor);
                 } else {
                     $this->showInsertForm($this->autor->getAllAutores());
                 }
@@ -52,22 +52,22 @@ class LivroController {
                     $ISBN = $_POST['ISBN'];
                     $autor_id = $_POST['autor_id'];
                     $this->model->updateLivro($id,$titulo,$assunto,$ano_publicado,$preco,$ISBN,$autor_id);
-                    $this->listLivro($this->model->getAllLivro());
+                    $this->listLivro($this->model->getAllLivro(),$this->autor);
                 }
             break;
             case 'delete':
                 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])){
                     $id = $_GET['id'];
                     $this->model->deleteLivro($id);
-                    $this->listLivro($this->model->getAllLivro());
+                    $this->listLivro($this->model->getAllLivro(),$this->autor);
                 }
             break;
         }
     }
 
-    public function listLivro($livros) {
+    public function listLivro($livros, $autor) {
         $view = new LivroView();
-        $view->showListLivro($livros);
+        $view->showListLivro($livros, $autor);
     }
 
     public function showInsertForm($autor) {
