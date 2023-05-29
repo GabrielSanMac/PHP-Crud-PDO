@@ -26,7 +26,12 @@
             <a href="http://localhost/mvc/index.php?route=carterinha&&action=list">CARTERINHA</a>
             <a href="http://localhost/mvc/index.php?route=telefone&&action=list">TELEFONE</a>
             <a href="http://localhost/mvc/index.php?route=endereco&&action=list">ENDEREÇO</a>
+            <a href="http://localhost/mvc/index.php?route=cidade&&action=list">CIDADE</a>
+            <a href="http://localhost/mvc/index.php?route=compra&&action=list">COMPRA</a>
+            <a href="http://localhost/mvc/index.php?route=editora&&action=list">EDITORA</a>
+            <a href="http://localhost/mvc/index.php?route=estoque&&action=list">ESTOQUE</a>
             <a href="http://localhost/mvc/index.php?route=log&&action=list">LOG</a>
+
 
         </header>
 
@@ -51,6 +56,10 @@
                     'carterinha' => 'CarterinhaController',
                     'telefone' => 'TelefoneController',
                     'endereco' => 'EnderecoController',
+                    'cidade' => 'CidadeController',
+                    'compra' => 'CompraController',
+                    'editora' => 'EditoraController',
+                    'estoque' => 'EstoqueController',
                 ];
 
                 $route_model = [
@@ -67,6 +76,10 @@
                     'carterinha' => 'CarterinhaModel',
                     'telefone' => 'TelefoneModel',
                     'endereco' => 'EnderecoModel',
+                    'cidade' => 'CidadeModel',
+                    'compra' => 'CompraModel',
+                    'editora' => 'EditoraModel',
+                    'estoque' => 'EstoqueModel',
                 ];
 
                 $route_view = [
@@ -84,7 +97,10 @@
                     'carterinha' => 'CarterinhaView',
                     'telefone' => 'TelefoneView',
                     'endereco' => 'EnderecoView',
-
+                    'cidade' => 'CidadeView',
+                    'compra' => 'CompraView',
+                    'editora' => 'EditoraView',
+                    'estoque' => 'EstoqueView',
                 ];
 
                 if(isset($route_controller[$route]) && isset($route_model[$route]) && isset($route_view[$route])){

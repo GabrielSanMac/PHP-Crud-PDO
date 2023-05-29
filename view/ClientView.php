@@ -1,7 +1,7 @@
 <?php 
 
 class ClientView {
-    public function showClients($clients){
+    public function showClients($clients,$endereco){
         echo '<h1>CLIENTE</h1><br>';
         echo '<table>
                 <tr>
@@ -20,7 +20,7 @@ class ClientView {
 
     }
 
-    public function showInsertForm(){
+    public function showInsertForm($endereco){
         echo "<h1>INSERT FORM CLIENT</h1>";
         echo "<form method='POST' action='index.php?route=client&&action=insert'>
             NOME : <input type='text' name='name' required><br>
@@ -30,7 +30,7 @@ class ClientView {
          </form>";
     }
 
-    public function showUpdateForm($client){
+    public function showUpdateForm($client,$endereco){
         echo "<h1>EDIT CLIENT</h1>";
         echo "<form action='http://localhost/mvc/index.php?route=client&&action=update' method='POST'>
                 <input type=text name='id' value='".$client['id']."'>

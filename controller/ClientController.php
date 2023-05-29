@@ -1,17 +1,20 @@
 <?php 
 
+require_once('./model/EnderecoModel.php');
 class ClientController{
     private $model;
+    private $endereco;
 
     public function __construct($model){
        $this->model = $model; 
+       $this->endereco = new EnderecoModel();
     }
 
     public function reqAction($action){
         switch($action){
             case 'list':
                 $clients = $this->model->getAllClients();
-                $this->listClients($clients);
+                $this->listClients($clients,$this->endereco);
                 $this->model->disconnect();
             break;
             case 'insert':
@@ -19,9 +22,9 @@ class ClientController{
                     $name = $_POST['name'];
                     $addressId = $_POST['addressId'];
                     $this->model->insertClient($name,$addressId);
-                    $this->listClients($this->model->getAllClients());
+                    $this->listClients($this->model->getAllClients(),$this->endereco);
                 } else {
-                    $this->showInsertForm();
+                    $this->showInsertForm($this->endereco);
                 }
             break;
             case 'edit':
@@ -31,7 +34,7 @@ class ClientController{
                     $client = $this->model->getClienteById($clientId);
 
                     if($client) {
-                        $this->showUpdateForm($client);
+                        $this->showUpdateForm($client,$this->endereco);
                     } else {
                         echo 'CLIENTE NÃO ENCONTRADO';
                     }
@@ -44,7 +47,7 @@ class ClientController{
                     $addressId = $_POST['endereco_id'];
 
                     $this->model->updateClient($id,$name,$addressId);
-                    $this->listClients($this->model->getAllClients());
+                    $this->listClients($this->model->getAllClients(),$this->endereco);
                 }
             break;
             case 'delete':
@@ -52,23 +55,23 @@ class ClientController{
                     $id = $_GET['id'];
                     $this->model->deleteClient($id);
                 }
-                $this->listClients($this->model->getAllClients());
+                $this->listClients($this->model->getAllClients(),$this->endereco);
         }
     }
     
-    public function listClients($clients) {
+    public function listClients($clients,$endereco) {
         $view = new ClientView();
-        $view->showClients($clients);
+        $view->showClients($clients,$endereco);
     }
 
-    public function showInsertForm(){
-        $view = new ClientView();
-        $view->showInsertForm();
+    public function showInsertForm($endereco){
+        $view = new ClientView($endereco);
+        $view->showInsertForm($endereco);
     }
 
-    public function showUpdateForm($client){
+    public function showUpdateForm($client,$endereco){
         $view = new ClientView();
-        $view->showUpdateForm($client);
+        $view->showUpdateForm($client,$endereco);
     }
 }
 

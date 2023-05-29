@@ -17,6 +17,13 @@ class EnderecoModel extends DB{
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
+    public function getEnderecoExtenco($id){
+        $statement = $this->conn->prepare("SELECT f_obter_endereco(:id)");
+        $statement->bindParam(":id",$id);
+        $statement->execute();
+        return $statement->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function insertEndereço($rua_nome,$numero_casa,$bairro_nome,$cidade_id) {
         try {
             $statement = $this->conn->prepare("CALL p_insert_endereco(:rua_nome,:numero_casa,:bairro_nome,:cidade_id)");
