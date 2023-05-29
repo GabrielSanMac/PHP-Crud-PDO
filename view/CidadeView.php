@@ -24,22 +24,27 @@ class CidadeView {
     }
 
     public function showInsertForm() {
-        echo "<h1>INSERT FORM CIDADE</h1>";
+        echo "<h1>NOVA CIDADE</h1>";
         echo "<form method='POST' action='index.php?route=cidade&&action=insert'>
-            NEW CIDADE <input type='text' name='cidade_nome' required><br>
-            NEW ESTADO <input type='text' name='estado_id' required><br>
+            <label for='cidade_nome'>Cidade</label>
+            <input type='text' name='cidade_nome' required><br>
+            <label for='estado_id'>Estado</label>
+            <input type='text' name='estado_id' required><br>
             <input type='submit' value='insert'>
             <a href='index.php?route=cidade&&action=list'>BACK</a>
          </form>";
     }
 
     public function showUpdateForm($cidade) {
-        echo "<h1>EDIT CIDADE</h1>";
+        echo "<h1>ATUALIZAR CIDADE</h1>";
         echo "<form action='index.php?route=cidade&&action=update' method='POST'>
-                <input type=text name='id' value='".$cidade['id']."'>
+                <input type=hidden name='id' value='".$cidade['id']."'>
+                <label for='cidade_nome'>Cidade</label>
                 <input type=text name='nome' value='".$cidade['cidade_nome']."'>
+                <label for='Estado_id'>Estado</label>
                 <input type=text name='nome' value='".$cidade['estado_id']."'>
                 <input type='submit' value='update'>
+                <a href='index.php?route=cidade&&action=list'>BACK</a>
               </form>";
     }
 }

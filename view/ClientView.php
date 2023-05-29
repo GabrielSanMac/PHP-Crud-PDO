@@ -7,7 +7,7 @@ class ClientView {
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>ENDEREÇO</th>
+                    <th>ENDEREÇO COMPLETO</th>
                 </tr>';
         for($i = 0; $i<count($clients);$i++){
             echo "<tr>";

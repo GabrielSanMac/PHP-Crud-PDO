@@ -22,20 +22,23 @@ class AutorView {
     }
 
     public function showInsertForm() {
-        echo "<h1>INSERT FORM AUTHOR</h1>";
+        echo "<h1>NOVO AUTOR</h1>";
         echo "<form method='POST' action='index.php?route=autor&&action=insert'>
-            NEW NAME <input type='text' name='nome' required><br>
+            <label for='nome'>Nome</label>
+            <input type='text' name='nome' required><br>
             <input type='submit' value='insert'>
-            <a href='index.php?route=autor&&action=list'>BACK</a>
+            <a class='btnBack' href='index.php?route=autor&&action=list'>BACK</a>
          </form>";
     }
 
     public function showUpdateForm($autor) {
-        echo "<h1>EDIT CLIENT</h1>";
+        echo "<h1>ATUALIZAR AUTOR</h1>";
         echo "<form action='index.php?route=autor&&action=update' method='POST'>
-                <input type=text name='id' value='".$autor['id']."'>
+                <input type=hidden name='id' value='".$autor['id']."'>
+                <label for='nome'>Nome</label>
                 <input type=text name='nome' value='".$autor['nome_autor']."'>
                 <input type='submit' value='update'>
+                <a class='btnBack' href='index.php?route=autor&&action=list'>BACK</a>
               </form>";
     }
 }

@@ -6,7 +6,7 @@ class GerenteView {
         echo '<table>
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
+                    <th>NOME</th>
                     <th colspan=2>ACTION</th>
                 </tr>';
         for($i = 0; $i<count($gerentes);$i++){
@@ -22,20 +22,23 @@ class GerenteView {
     }
 
     public function showInsertForm() {
-        echo "<h1>INSERT FORM AUTHOR</h1>";
+        echo "<h1>ADICIONAR GERENTE</h1>";
         echo "<form method='POST' action='index.php?route=gerente&&action=insert'>
-            NEW NAME <input type='text' name='nome' required><br>
+            <label for='nome'>Nome</label>
+            <input type='text' name='nome' required><br>
             <input type='submit' value='insert'>
-            <a href='index.php?route=gerente&&action=list'>BACK</a>
+            <a class='btnBack'  href='index.php?route=gerente&&action=list'>BACK</a>
          </form>";
     }
 
     public function showUpdateForm($gerente) {
-        echo "<h1>EDIT CLIENT</h1>";
+        echo "<h1>ATUALIZAR GERENTE</h1>";
         echo "<form action='index.php?route=gerente&&action=update' method='POST'>
-                <input type=text name='id' value='".$gerente['id']."'>
+                <input type=hidden name='id' value='".$gerente['id']."'>
+                <label for='nome'>Nome</label>
                 <input type=text name='nome' value='".$gerente['gerente_nome']."'>
                 <input type='submit' value='update'>
+                <a class='btnBack'  href='index.php?route=gerente&&action=list'>BACK</a>
               </form>";
     }
 }

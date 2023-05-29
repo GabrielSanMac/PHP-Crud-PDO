@@ -22,20 +22,23 @@ class GeneroView {
     }
 
     public function showInsertForm() {
-        echo "<h1>INSERT FORM AUTHOR</h1>";
+        echo "<h1>ADICIONAR GENERO</h1>";
         echo "<form method='POST' action='index.php?route=genero&&action=insert'>
-            NEW NAME <input type='text' name='nome' required><br>
+            <label for='nome'>Nome</label>
+            <input type='text' name='nome' required><br>
             <input type='submit' value='insert'>
-            <a href='index.php?route=genero&&action=list'>BACK</a>
+            <a class='btnBack'  href='index.php?route=genero&&action=list'>BACK</a>
          </form>";
     }
 
     public function showUpdateForm($genero) {
-        echo "<h1>EDIT CLIENT</h1>";
+        echo "<h1>ATUALIZAR GENERO</h1>";
         echo "<form action='index.php?route=genero&&action=update' method='POST'>
-                <input type=text name='id' value='".$genero['id']."'>
+                <input type=hidden name='id' value='".$genero['id']."'>
+                <label for='nome'>Nome</label>
                 <input type=text name='nome' value='".$genero['nome_genero']."'>
                 <input type='submit' value='update'>
+                <a class='btnBack'  href='index.php?route=genero&&action=list'>BACK</a>
               </form>";
     }
 }

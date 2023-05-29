@@ -49,7 +49,8 @@ class TelefoneView {
                         echo "<option value=".$cliente[$i]['id'].">".$cliente[$i]['nome']."</option>";
                     }
                 }
-                echo "<input type='submit' value='update'>
+                echo " </select>
+                <input type='submit' value='update'>
               </form>";
     }
 }
