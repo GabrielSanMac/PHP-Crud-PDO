@@ -31,6 +31,7 @@
             <a href="http://localhost/mvc/index.php?route=editora&&action=list">EDITORA</a>
             <a href="http://localhost/mvc/index.php?route=estoque&&action=list">ESTOQUE</a>
             <a href="http://localhost/mvc/index.php?route=estado&&action=list">ESTADO</a>
+            <a href="http://localhost/mvc/index.php?route=pais&&action=list">PAIS</a>
             <a href="http://localhost/mvc/index.php?route=log&&action=list">LOG</a>
 
 
@@ -62,6 +63,7 @@
                     'editora' => 'EditoraController',
                     'estoque' => 'EstoqueController',
                     'estado' => 'EstadoController',
+                    'pais' => 'PaisController',
                 ];
 
                 $route_model = [
@@ -83,7 +85,7 @@
                     'editora' => 'EditoraModel',
                     'estoque' => 'EstoqueModel',
                     'estado' => 'EstadoModel',
-
+                    'pais' => 'PaisModel',
                 ];
 
                 $route_view = [
@@ -106,6 +108,7 @@
                     'editora' => 'EditoraView',
                     'estoque' => 'EstoqueView',
                     'estado' => 'EstadoView',
+                    'pais' => 'PaisView',
                 ];
 
                 if(isset($route_controller[$route]) && isset($route_model[$route]) && isset($route_view[$route])){
