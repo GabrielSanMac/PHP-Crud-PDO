@@ -43,7 +43,7 @@ class TelefoneView {
                 <input type=text name='numero_telefone' value='".$telefone['numero_telefone']."'>
                 NEW CLIENTE <select name='cliente_id'>" ?> <?php
                 for($i = 0; $i < count($cliente); $i++){
-                    if($cliente[$i]['id'] == $telefone['id']){
+                    if($cliente[$i]['id'] == $telefone['cliente_id']){
                         echo "<option value=".$cliente[$i]['id']." selected='selected'>".$cliente[$i]['nome']."</option>";
                     } else {
                         echo "<option value=".$cliente[$i]['id'].">".$cliente[$i]['nome']."</option>";

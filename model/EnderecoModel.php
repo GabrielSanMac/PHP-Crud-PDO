@@ -18,7 +18,7 @@ class EnderecoModel extends DB{
     }
 
     public function getEnderecoExtenco($id){
-        $statement = $this->conn->prepare("SELECT f_obter_endereco(:id)");
+        $statement = $this->conn->prepare("SELECT f_obter_endereco(:id) as enderecoExtenco");
         $statement->bindParam(":id",$id);
         $statement->execute();
         return $statement->fetch(PDO::FETCH_ASSOC);

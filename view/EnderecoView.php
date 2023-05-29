@@ -1,7 +1,7 @@
 <?php 
 
 class EnderecoView {
-    public function showListEndereco($endereco) {
+    public function showListEndereco($endereco,$cidade) {
         echo '<h1>ENDERECO</h1><br>';
         echo '<table>
                 <tr>
@@ -18,7 +18,7 @@ class EnderecoView {
             echo "<td>".$endereco[$i]['rua_nome']."</td>";
             echo "<td>".$endereco[$i]['numero_casa']."</td>";
             echo "<td>".$endereco[$i]['bairro_nome']."</td>";
-            echo "<td>".$endereco[$i]['cidade_id']."</td>";
+            echo "<td>".$cidade->getCidadeById($endereco[$i]['cidade_id'])['cidade_nome']."</td>";
             echo "<td><a class=btnEdit href='index.php?route=endereco&&id=".$endereco[$i]['id']."&&action=edit'>EDIT</a></td>";
             echo "<td><a class=btnRemove href='index.php?route=endereco&&id=".$endereco[$i]['id']."&&action=delete'>DELETE</a></td>";
             echo "</tr>";
@@ -39,14 +39,23 @@ class EnderecoView {
          </form>";
     }
 
-    public function showUpdateForm($endereco) {
+    public function showUpdateForm($endereco, $cidade) {
         echo "<h1>EDIT CLIENT</h1>";
         echo "<form action='index.php?route=endereco&&action=update' method='POST'>
                 <input type=hidden name='id' value='".$endereco['id']."'>
                 <input type=text name='rua_nome' value='".$endereco['rua_nome']."'>
                 <input type=text name='numero_casa' value='".$endereco['numero_casa']."'>
                 <input type=text name='bairro_nome' value='".$endereco['bairro_nome']."'>
-                <input type=text name='cidade_id' value='".$endereco['cidade_id']."'>
+                <select name='cidade_id'>";
+                ?><?php
+                for($i = 0; $i < count($cidade);$i++){
+                    if($endereco['cidade_id'] == $cidade[$i]['id']){
+                        echo "<option value=".$cidade[$i]['id']." selected='selected'>".$cidade[$i]['cidade_nome']."</option>";
+                    } else {
+                        echo "<option value=".$cidade[$i]['id']." >".$cidade[$i]['cidade_nome']."</option>";
+                    }
+                }
+                echo "</select>
                 <input type='submit' value='update'>
               </form>";
     }

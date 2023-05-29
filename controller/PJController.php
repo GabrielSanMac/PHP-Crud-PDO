@@ -1,18 +1,24 @@
 <?php 
 
+require_once("./model/ClientModel.php");
+require_once("./model/EnderecoModel.php");
 
 class PJController{
     private $model;
+    private $cliente;
+    private $endereco;
 
     public function __construct($model){
         $this->model = $model;
+        $this->cliente = new ClientModel;
+        $this->endereco = new EnderecoModel;
     }
 
     public function reqAction($action){
         switch($action){
             case 'list':
                 $PJs = $this->model->getAllPJ();
-                $this->listPJs($PJs);
+                $this->listPJs($PJs,$this->cliente);
                 $this->model->disconnect();
             break;
             case 'insert':
@@ -22,21 +28,21 @@ class PJController{
                     $razao_social = $_POST['razao_social'];
                     $cnpj = $_POST['cnpj'];
                     $this->model->insertPJ($nome,$endereco_id,$razao_social,$cnpj);
-                    $this->listPJs($this->model->getAllPJ());
+                    $this->listPJs($this->model->getAllPJ(),$this->cliente);
                 } else {
-                    $this->showPJproInsertForm();
+                    $this->showPJproInsertForm($this->endereco);
                 }
         }
     }
 
-    public function listPJs($PJs){
+    public function listPJs($PJs,$cliente){
         $view = new PJView();
-        $view->showPJs($PJs);
+        $view->showPJs($PJs,$cliente);
     }
 
-    public function showPJproInsertForm(){
+    public function showPJproInsertForm($endereco){
         $view = new PJView();
-        $view->showPJproInsertForm();
+        $view->showPJproInsertForm($endereco);
     }
 }
 

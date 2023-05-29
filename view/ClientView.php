@@ -7,13 +7,13 @@ class ClientView {
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>ID ADDRESS</th>
+                    <th>ENDEREÇO</th>
                 </tr>';
         for($i = 0; $i<count($clients);$i++){
             echo "<tr>";
             echo "<td>".$clients[$i]['id']."</td>";
             echo "<td>".$clients[$i]['nome']."</td>";
-            echo "<td>".$clients[$i]['endereco_id']."</td>";
+            echo "<td>".$endereco->getEnderecoExtenco($clients[$i]['endereco_id'])['enderecoExtenco']."</td>";
             echo "</tr>";
         }
         echo "</table>";
